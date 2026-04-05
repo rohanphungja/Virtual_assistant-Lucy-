@@ -7,16 +7,6 @@ import pyttsx3
 import musiclibrary
 from openai import OpenAI
 
-# add your own api key here
-# client = OpenAI(api_key=" ") 
-response = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {"role": "user", "content": "You are virtual assistant named lucy developed by Rohan. You reply like Alexa and google cloud"},
-        {"role": "user", "content": "what is coding"}
-        ]
-)
-
 
 
 def speak(text): 
@@ -24,7 +14,8 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 def openai(command):
-    client = OpenAI(api_key="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")
+    # use your own api key here
+    client = OpenAI(api_key=" ")
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
