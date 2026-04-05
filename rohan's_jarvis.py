@@ -6,8 +6,9 @@ import webbrowser
 import pyttsx3
 import musiclibrary
 from openai import OpenAI
-client = OpenAI(api_key="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")
 
+# add your own api key here
+# client = OpenAI(api_key=" ") 
 response = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
@@ -18,7 +19,7 @@ response = client.chat.completions.create(
 
 
 
-def speak(text):
+def speak(text): 
     engine = pyttsx3.init()
     engine.say(text)
     engine.runAndWait()
@@ -61,11 +62,8 @@ def process_command(command):
         output = openai(command)
         speak(output)
 
-
-    
-
 print("Welcome to Rohan's lucy!")
-print("I can help you with the following tasks:")
+
 if __name__ == "__main__":
     speak("This is lucy 2 point o, devloped by Rohan. Please say activation code ")
     while True:
